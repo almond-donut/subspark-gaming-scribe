@@ -459,61 +459,68 @@ const Index = () => {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="py-20 px-4">
-          <div className="container mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-12">
-              No subscriptions, no hidden fees. Pay only when you're satisfied with the quality.
+        <section id="pricing" className="text-center py-16 px-6 bg-gradient-to-b from-slate-950 via-blue-950 to-indigo-950 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Simple Pricing, Powerful Subtitles</h2>
+          <p className="text-slate-400 mb-6 text-sm md:text-base">Always FREE preview included — pay only when you're happy.</p>
+
+          <div className="flex flex-wrap justify-center gap-6">
+
+            {/* Tier 1 */}
+            <div className="bg-slate-800 border border-purple-600 rounded-xl p-6 w-full md:w-64">
+              <h3 className="text-xl font-semibold mb-2">Quick Clips</h3>
+              <p className="text-purple-400 font-bold text-2xl mb-2">$5</p>
+              <ul className="text-sm text-left text-slate-300 space-y-1">
+                <li>🎞 Up to 15 mins</li>
+                <li>📁 1 file max</li>
+                <li>⏱ 6–12 hour delivery</li>
+                <li>🎯 Best for TikTok, highlights</li>
+              </ul>
+            </div>
+
+            {/* Tier 2 */}
+            <div className="bg-slate-800 border border-purple-600 rounded-xl p-6 w-full md:w-64">
+              <h3 className="text-xl font-semibold mb-2">Standard Sessions</h3>
+              <p className="text-purple-400 font-bold text-2xl mb-2">$12</p>
+              <ul className="text-sm text-left text-slate-300 space-y-1">
+                <li>🎞 Up to 30 mins</li>
+                <li>📁 1–2 files</li>
+                <li>⏱ 6–12 hour delivery</li>
+                <li>🎯 Best for YouTube, stream cuts</li>
+              </ul>
+            </div>
+
+            {/* Tier 3 */}
+            <div className="bg-slate-800 border border-purple-600 rounded-xl p-6 w-full md:w-64">
+              <h3 className="text-xl font-semibold mb-2">Extended Content</h3>
+              <p className="text-purple-400 font-bold text-2xl mb-2">$20</p>
+              <ul className="text-sm text-left text-slate-300 space-y-1">
+                <li>🎞 Up to 60 mins</li>
+                <li>📁 1–2 files</li>
+                <li>⏱ 12–24 hour delivery</li>
+                <li>🎯 Best for full episodes, long streams</li>
+              </ul>
+            </div>
+
+            {/* Tier 4 */}
+            <div className="bg-slate-800 border border-purple-600 rounded-xl p-6 w-full md:w-64">
+              <h3 className="text-xl font-semibold mb-2">Marathon Streams</h3>
+              <p className="text-purple-400 font-bold text-2xl mb-2">$35</p>
+              <ul className="text-sm text-left text-slate-300 space-y-1">
+                <li>🎞 Up to 2 hours</li>
+                <li>📁 1 file max</li>
+                <li>⏱ 24–48 hour delivery</li>
+                <li>🎯 Best for full VOD sessions</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div className="mt-10">
+            <p className="text-sm text-slate-400">🆓 Free Preview Policy:</p>
+            <p className="text-sm text-white">
+              Tier 1–2: Middle segment preview (3–5 mins) <br />
+              Tier 3–4: Multi-segment showcase (2–3 highlights)
             </p>
-
-            <Card className="border-slate-200 dark:border-slate-700 bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-slate-800 dark:via-blue-950/50 dark:to-purple-950/50 shadow-xl">
-              <CardHeader className="text-center">
-                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$5</div>
-                <CardTitle className="text-2xl text-slate-800 dark:text-slate-100">Per Request</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3 text-left">
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">Up to 30 minutes of content</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">1-2 video files maximum</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">Korean/Japanese/Chinese → English</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">Gaming & casual tone specialization</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">Delivered in 6-12 hours</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700 dark:text-slate-300">Perfect for: Anime clips, gaming highlights</span>
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">Payment Methods:</p>
-                  <div className="flex justify-center space-x-4">
-                    <div className="bg-blue-100 dark:bg-blue-900/50 px-4 py-2 rounded-lg text-blue-700 dark:text-blue-300 font-medium">
-                      PayPal
-                    </div>
-                    <div className="bg-red-100 dark:bg-red-900/50 px-4 py-2 rounded-lg text-red-700 dark:text-red-300 font-medium">
-                      Ko-fi
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
