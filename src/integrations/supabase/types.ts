@@ -9,7 +9,47 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      requests: {
+        Row: {
+          id: string
+          email: string
+          video_link: string
+          source_language: string
+          context_tones: string[]
+          notes: string | null
+          status: 'submitted' | 'in_progress' | 'done'
+          payment_status: 'pending' | 'paid' | 'free'
+          payment_method: 'paypal' | 'ko-fi' | 'manual' | null
+          srt_link: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          email: string
+          video_link: string
+          source_language: string
+          context_tones?: string[]
+          notes?: string | null
+          status?: 'submitted' | 'in_progress' | 'done'
+          payment_status?: 'pending' | 'paid' | 'free'
+          payment_method?: 'paypal' | 'ko-fi' | 'manual' | null
+          srt_link?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          video_link?: string
+          source_language?: string
+          context_tones?: string[]
+          notes?: string | null
+          status?: 'submitted' | 'in_progress' | 'done'
+          payment_status?: 'pending' | 'paid' | 'free'
+          payment_method?: 'paypal' | 'ko-fi' | 'manual' | null
+          srt_link?: string | null
+          created_at?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
