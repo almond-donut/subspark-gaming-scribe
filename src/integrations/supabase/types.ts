@@ -11,44 +11,45 @@ export type Database = {
     Tables: {
       requests: {
         Row: {
-          id: string
+          context_tones: string[] | null
+          created_at: string | null
           email: string
-          video_link: string
-          source_language: string
-          context_tones: string[]
+          id: string
           notes: string | null
-          status: 'submitted' | 'in_progress' | 'done'
-          payment_status: 'pending' | 'paid' | 'free'
-          payment_method: 'paypal' | 'ko-fi' | 'manual' | null
+          payment_method: string | null
+          payment_status: string | null
+          source_language: string
           srt_link: string | null
-          created_at: string
+          status: string | null
+          video_link: string
         }
         Insert: {
-          id?: string
+          context_tones?: string[] | null
+          created_at?: string | null
           email: string
-          video_link: string
-          source_language: string
-          context_tones?: string[]
+          id?: string
           notes?: string | null
-          status?: 'submitted' | 'in_progress' | 'done'
-          payment_status?: 'pending' | 'paid' | 'free'
-          payment_method?: 'paypal' | 'ko-fi' | 'manual' | null
+          payment_method?: string | null
+          payment_status?: string | null
+          source_language: string
           srt_link?: string | null
-          created_at?: string
+          status?: string | null
+          video_link: string
         }
         Update: {
-          id?: string
+          context_tones?: string[] | null
+          created_at?: string | null
           email?: string
-          video_link?: string
-          source_language?: string
-          context_tones?: string[]
+          id?: string
           notes?: string | null
-          status?: 'submitted' | 'in_progress' | 'done'
-          payment_status?: 'pending' | 'paid' | 'free'
-          payment_method?: 'paypal' | 'ko-fi' | 'manual' | null
+          payment_method?: string | null
+          payment_status?: string | null
+          source_language?: string
           srt_link?: string | null
-          created_at?: string
+          status?: string | null
+          video_link?: string
         }
+        Relationships: []
       }
     }
     Views: {
