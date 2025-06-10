@@ -188,92 +188,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section - REVERTED TO ORIGINAL */}
-      <section id="pricing" className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 dark:text-white mb-16">
-            Simple, Transparent Pricing
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Quick Clips",
-                price: "$5",
-                duration: "Up to 15 mins",
-                delivery: "6–12 hours",
-                files: "1 file max",
-                description: "Perfect for TikTok clips and highlights"
-              },
-              {
-                title: "Standard Sessions",
-                price: "$12",
-                duration: "Up to 30 mins",
-                delivery: "6–12 hours",
-                files: "1–2 files",
-                description: "Best for YouTube videos and stream cuts"
-              },
-              {
-                title: "Extended Content",
-                price: "$20",
-                duration: "Up to 60 mins",
-                delivery: "12–24 hours",
-                files: "1–2 files",
-                description: "Ideal for full episodes and long streams"
-              },
-              {
-                title: "Marathon Streams",
-                price: "$35",
-                duration: "Up to 2 hours",
-                delivery: "24–48 hours",
-                files: "1 file max",
-                description: "Perfect for full VOD sessions"
-              }
-            ].map((tier, index) => (
-              <Card key={index} className="relative group hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl font-semibold text-slate-900 dark:text-white">
-                    {tier.title}
-                  </CardTitle>
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                    {tier.price}
-                  </div>
-                  <CardDescription className="text-slate-600 dark:text-slate-300">
-                    {tier.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-blue-600" />
-                    <span>{tier.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <FileText className="h-4 w-4 text-green-600" />
-                    <span>{tier.files}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Star className="h-4 w-4 text-yellow-600" />
-                    <span>{tier.delivery}</span>
-                  </div>
-                  <Button 
-                    onClick={() => navigate(`/payment?plan=${tier.title.toLowerCase().replace(/\s+/g, '-')}&amount=${tier.price.slice(1)}`)}
-                    className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
-                  >
-                    Choose Plan
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <p className="text-slate-600 dark:text-slate-300">
-              ✨ All plans include a FREE preview before payment
-            </p>
-          </div>
+      {/* Updated Pricing Section */}
+      <section id="pricing" className="text-center py-16 px-6 bg-gradient-to-b from-[#0c0f1c] to-[#1a1e2e] text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Simple Pricing, Powerful Subtitles</h2>
+        <p className="text-gray-400 mb-6 text-sm md:text-base">Always FREE preview included — pay only when you're happy.</p>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          {[
+            {
+              title: "Quick Clips",
+              price: "$5",
+              features: ["🎞 Up to 15 mins", "📁 1 file max", "⏱ 6–12 hour delivery", "🎯 Best for TikTok, highlights"]
+            },
+            {
+              title: "Standard Sessions",
+              price: "$12",
+              features: ["🎞 Up to 30 mins", "📁 1–2 files", "⏱ 6–12 hour delivery", "🎯 Best for YouTube, stream cuts"]
+            },
+            {
+              title: "Extended Content",
+              price: "$20",
+              features: ["🎞 Up to 60 mins", "📁 1–2 files", "⏱ 12–24 hour delivery", "🎯 Best for full episodes, long streams"]
+            },
+            {
+              title: "Marathon Streams",
+              price: "$35",
+              features: ["🎞 Up to 2 hours", "📁 1 file max", "⏱ 24–48 hour delivery", "🎯 Best for full VOD sessions"]
+            }
+          ].map((tier, index) => (
+            <div key={index} className="bg-[#131729] border border-purple-600 rounded-xl p-6 w-full md:w-64 group hover:scale-105 transition-all duration-300 hover:border-purple-400">
+              <h3 className="text-xl font-semibold mb-2">{tier.title}</h3>
+              <p className="text-purple-400 font-bold text-2xl mb-2">{tier.price}</p>
+              <ul className="text-sm text-left text-gray-300 space-y-1">
+                {tier.features.map((feature, fIndex) => (
+                  <li key={fIndex} className="group-hover:text-white transition-colors duration-200">{feature}</li>
+                ))}
+              </ul>
+              <Button 
+                onClick={() => navigate(`/payment?plan=${tier.title.toLowerCase().replace(/\s+/g, '-')}&amount=${tier.price.slice(1)}`)}
+                className="w-full mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-200"
+              >
+                Choose Plan
+              </Button>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10">
+          <p className="text-sm text-gray-400">🆓 Free Preview Policy:</p>
+          <p className="text-sm text-white">
+            Tier 1–2: Middle segment preview (3–5 mins) <br />
+            Tier 3–4: Multi-segment showcase (2–3 highlights)
+          </p>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 bg-white/50 dark:bg-slate-900/50">
+      <section id="how-it-works" className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 dark:text-white mb-16">
             How It Works
@@ -318,7 +289,7 @@ const Index = () => {
       </section>
 
       {/* Request Form Section */}
-      <section id="request-form" className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
+      <section id="request-form" className="py-20 px-4">
         <div className="container mx-auto max-w-2xl">
           <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <CardHeader className="text-center">
